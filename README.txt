@@ -1,9 +1,5 @@
 PHISHING DETECTION PROJECT: COST BASED THRESHOLDS AND GENERALIZATION
-Abdullah Jamil and Nausherwan Baig, CS9833A
-
-======================================================================
-WHAT IS IN THIS FOLDER
-======================================================================
+Abdullah Jamil and Nausherwan Baig
 
 data/phishing.csv                 original dataset used by Karim et al. (Kaggle copy of UCI)
 data/dataset_B_05_2020.csv        Mendeley dataset (Hannousse and Yahiouche), 11,430 raw URLs
@@ -15,9 +11,6 @@ phase3_threshold.py               Phase 3: cost based threshold, infeasible case
 phase4_generalization.py          Phase 4: train on original data, test on the Mendeley dataset
 requirements.txt                  Python packages needed
 
-======================================================================
-THE FOUR PHASES (and which part of the proposal each one covers)
-======================================================================
 
 Phase 1  Data and leakage control  (proposal: "Data Splitting and Leakage Control")
          - recodes labels so phishing = 1 (in the file, -1 means phishing)
@@ -62,15 +55,13 @@ Phase 4  Generalization  (proposal: "Generalization to an Independent Dataset")
          - reference: trains and tests inside Mendeley, with splits grouped by domain
          - reports the gap between the datasets and a feature distribution comparison
 
-======================================================================
-STEP BY STEP: HOW TO RUN (Mac)
-======================================================================
+STEP BY STEP: HOW TO RUN 
 
 You only need to do steps 1 to 4 once.
 
 1. Check that Python 3 is installed. Open the Terminal app and type:
 
-       python3 --version
+       python --version
 
    You should see Python 3.9 or newer. If you get an error, install Python from
    https://www.python.org/downloads/ and try again.
@@ -83,7 +74,7 @@ You only need to do steps 1 to 4 once.
 
 3. Create a virtual environment (a private space for the packages) and turn it on:
 
-       python3 -m venv venv
+       python -m venv venv
        source venv/bin/activate
 
    Your prompt should now start with (venv). Every time you open a new Terminal window,
@@ -107,15 +98,7 @@ You only need to do steps 1 to 4 once.
    The second Phase 2 command is the extra experiment from the proposal: the same
    models trained without the 128 ambiguous rows, to see how much they matter.
 
-6. Package the results to share:
-
-       zip -r results_to_share.zip results results_*_log.txt -x "results/models*"
-
-   Send results_to_share.zip back.
-
-======================================================================
 OUTPUT FILES (all in the results folder)
-======================================================================
 
 phase1_summary.csv                    counts after cleaning
 phase1_leakage_check.csv              test rows that also appear in training, paper split vs ours
